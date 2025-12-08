@@ -16,7 +16,7 @@ class Articulo(models.Model):
     fecha_publicacion = models.DateField(auto_now_add=True)
     activo = models.BooleanField(default=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    imagen = models.ImageField(null=True, blank=True, upload_to='media', default='articulo_defecto.jpg')
+    imagen = models.ImageField(null=True, blank=True, upload_to='media', default='media/articulo_defecto.png')
     publicado = models.DateTimeField(default= timezone.now)
 
     class Meta:

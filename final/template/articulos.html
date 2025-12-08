@@ -1,14 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
-
+<title>{% block title %} Articulos {% endblock title %}</title>
 {% block contenido %}
 
-{% for i in articulos %}
-<br>
-<li>{{ i.titulo }}</li>
-<li>{{ i.resumen }}</li>
-<li>{{ i.categoria }}</li>
-
-{% endfor %}
+<div id="fh5co-work">
+    <div class="row">
+        
+        {% for i in articulos %}
+        
+        <div class="col-md-4 text-center animate-box">
+            
+            <a href="{% url 'apps.articulos:articulo_individual' i.id %}" class="work" style="background-image: url('{{ i.imagen.url }}');">
+                
+                <div class="desc">
+                    <h3>{{ i.titulo }}</h3>
+                    
+                    <span>{{ i.resumen }}</span>
+                    <br>
+                    <small>Categoría: {{ i.categoria }}</small>
+                </div>
+            </a>
+            
+            </div>
+        {% endfor %}
+        
+    </div>
+</div>
 
 {% endblock contenido %}
