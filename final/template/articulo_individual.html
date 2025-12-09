@@ -1,15 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>{% block title %} {{ articulos.titulo }} {% endblock title %}</title>
+{% block contenido %}
+
+<div class="container-wrap">
+    <div id="fh5co-work">
+			<div class="row">
+				<div class="col-md-12">
+					<li>{{ articulos.titulo }}</li>
+                    <li>{{ articulos.resumen }}</li>
+                    <li>{{ articulos.categoria }}</li>
+                    <br>
+                    <br>
+						<img src="{{ articulos.imagen.url }}" alt="imagen de prueba" class="img-responsive">
 
 
-<br>
-<li>{{ articulos.titulo }}</li>
-<li>{{ articulos.resumen }}</li>
-<li>{{ articulos.categoria }}</li>
-<br>
-<br>
-
-<img src="{{ articulos.imagen.url }}" alt="imagen de prueba">
 
 
 
 
-
+{% endblock contenido %}
+</div>

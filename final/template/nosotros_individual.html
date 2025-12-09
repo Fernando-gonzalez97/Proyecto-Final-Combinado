@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil de {{ miembro.nombre }}{% endblock %}
+
+{% block content %}
+    <a href="{% url 'equipo_lista' %}">← Volver al Equipo</a>
+
+    <div class="perfil-completo">
+        <h1>{{ miembro.nombre }}</h1>
+        <h2>{{ miembro.cargo }}</h2>
+
+        {% if miembro.foto %}
+            <img src="{{ miembro.foto.url }}" alt="Foto de {{ miembro.nombre }}" width="300">
+        {% endif %}
+
+        <h3>Biografía</h3>
+        <p>{{ miembro.bio|linebreaks }}</p>
+        
+        {% if miembro.email %}
+            <p>Contacto: <a href="mailto:{{ miembro.email }}">{{ miembro.email }}</a></p>
+        {% endif %}
+    </div>
+
+{% endblock %}

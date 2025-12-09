@@ -2,15 +2,15 @@
 {% load static %}
 <title>{% block title %} Articulos {% endblock title %}</title>
 {% block contenido %}
-
-<div id="fh5co-work">
-    <div class="row">
+<div class="container-wrap">
+    <div id="fh5co-work">
+        <div class="row">
         
-        {% for i in articulos %}
+            {% for i in articulos %}
         
-        <div class="col-md-4 text-center animate-box">
+            <div class="col-md-4 text-center animate-box">
             
-            <a href="{% url 'apps.articulos:articulo_individual' i.id %}" class="work" style="background-image: url('{{ i.imagen.url }}');">
+                <a href="{% url 'apps.articulos:articulo_individual' i.id %}" class="work" style="background-image: url('{{ i.imagen.url }}');">
                 
                 <div class="desc">
                     <h3>{{ i.titulo }}</h3>
@@ -25,6 +25,7 @@
         {% endfor %}
         
     </div>
+</div>
 </div>
 
 {% endblock contenido %}
